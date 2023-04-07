@@ -21,6 +21,5 @@ def unload(bot: lightbulb.BotApp):
 async def goatgpt_ask(ctx: lightbulb.Context) -> None:
     prompt = ctx.options.prompt
     result = goat.ask(prompt)
-    print (prompt)
     
-    await ctx.respond(prompt + result)
+    await ctx.respond(result)
