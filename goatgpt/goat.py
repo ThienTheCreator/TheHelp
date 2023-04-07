@@ -13,15 +13,16 @@ class Goat:
         # self.current_basket = "default"
 
     def ask(self, prompt):
-        response = openai.Completion.create(
-            engine="babbage",
-            prompt=prompt,
-            max_tokens=50,
-            n=1,
-            stop=None,
-            temperature=0.5,
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", 
+            messages=[
+                {
+                    "role": "user", 
+                    "content": prompt
+                }
+            ]
         )
-        message = response.choices[0].text
+        message = response.choices[0].message.content
         # self.storage[self.current_basket].append(item)
         if len(message) > 2000:
             message = message[:1997] + "..."
