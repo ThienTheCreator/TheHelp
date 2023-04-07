@@ -21,5 +21,13 @@ def unload(bot: lightbulb.BotApp):
 async def goatgpt_ask(ctx: lightbulb.Context) -> None:
     prompt = ctx.options.prompt
     result = goat.ask(prompt)
+    embed = hikari.Embed(
+        title="Question",
+        description=prompt,
+        color=hikari.Color.from_rgb(255, 165, 0)
+    )
+    embed.add_field(name="Answer", value=result)
     
-    await ctx.respond(result)
+    await ctx.respond(embed=embed)
+    # await ctx.respond("Prompt: " + prompt + "\n" + result)
+    

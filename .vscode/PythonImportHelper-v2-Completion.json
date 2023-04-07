@@ -1,0 +1,116 @@
+[
+    {
+        "label": "openai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openai",
+        "description": "openai",
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "hikari",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hikari",
+        "description": "hikari",
+        "detail": "hikari",
+        "documentation": {}
+    },
+    {
+        "label": "lightbulb",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "lightbulb",
+        "description": "lightbulb",
+        "detail": "lightbulb",
+        "documentation": {}
+    },
+    {
+        "label": "plugin",
+        "importPath": "goatgpt.goatgpt",
+        "description": "goatgpt.goatgpt",
+        "isExtraImport": true,
+        "detail": "goatgpt.goatgpt",
+        "documentation": {}
+    },
+    {
+        "label": "Goat",
+        "kind": 6,
+        "importPath": "goatgpt.goat",
+        "description": "goatgpt.goat",
+        "peekOfCode": "class Goat:\n    def __init__(self):\n        pass\n        # self.storage = {\"default\": []}\n        # self.current_basket = \"default\"\n    def ask(self, prompt):\n        response = openai.ChatCompletion.create(\n            model=\"gpt-3.5-turbo\", \n            messages=[\n                {",
+        "detail": "goatgpt.goat",
+        "documentation": {}
+    },
+    {
+        "label": "openai.api_key",
+        "kind": 5,
+        "importPath": "goatgpt.goat",
+        "description": "goatgpt.goat",
+        "peekOfCode": "openai.api_key = os.getenv(\"API_KEY\")\nclass Goat:\n    def __init__(self):\n        pass\n        # self.storage = {\"default\": []}\n        # self.current_basket = \"default\"\n    def ask(self, prompt):\n        response = openai.ChatCompletion.create(\n            model=\"gpt-3.5-turbo\", \n            messages=[",
+        "detail": "goatgpt.goat",
+        "documentation": {}
+    },
+    {
+        "label": "load",
+        "kind": 2,
+        "importPath": "goatgpt.goatgpt",
+        "description": "goatgpt.goatgpt",
+        "peekOfCode": "def load(bot: lightbulb.BotApp):\n    bot.add_plugin(plugin)\ndef unload(bot: lightbulb.BotApp):\n    bot.remove_plugin(plugin)\n# -- COMMANDS -- \n# ASK GOATGPT\n@plugin.command\n@lightbulb.option(\"prompt\", \"prompt goatgpt\", type=str)\n@lightbulb.command(\"ask\", \"Ask GoatGPT anything!\")\n@lightbulb.implements(lightbulb.SlashCommand)",
+        "detail": "goatgpt.goatgpt",
+        "documentation": {}
+    },
+    {
+        "label": "unload",
+        "kind": 2,
+        "importPath": "goatgpt.goatgpt",
+        "description": "goatgpt.goatgpt",
+        "peekOfCode": "def unload(bot: lightbulb.BotApp):\n    bot.remove_plugin(plugin)\n# -- COMMANDS -- \n# ASK GOATGPT\n@plugin.command\n@lightbulb.option(\"prompt\", \"prompt goatgpt\", type=str)\n@lightbulb.command(\"ask\", \"Ask GoatGPT anything!\")\n@lightbulb.implements(lightbulb.SlashCommand)\nasync def goatgpt_ask(ctx: lightbulb.Context) -> None:\n    prompt = ctx.options.prompt",
+        "detail": "goatgpt.goatgpt",
+        "documentation": {}
+    },
+    {
+        "label": "plugin",
+        "kind": 5,
+        "importPath": "goatgpt.goatgpt",
+        "description": "goatgpt.goatgpt",
+        "peekOfCode": "plugin = lightbulb.Plugin(\"goatgpt\")\ngoat: Goat = Goat()\ndef load(bot: lightbulb.BotApp):\n    bot.add_plugin(plugin)\ndef unload(bot: lightbulb.BotApp):\n    bot.remove_plugin(plugin)\n# -- COMMANDS -- \n# ASK GOATGPT\n@plugin.command\n@lightbulb.option(\"prompt\", \"prompt goatgpt\", type=str)",
+        "detail": "goatgpt.goatgpt",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "bot = lightbulb.BotApp(token=os.getenv(\"DISCORD_TOKEN\"), default_enabled_guilds=(811140759356964865))\n@bot.listen(hikari.StartedEvent)\nasync def on_started(event):    \n    print(\"Bot is ready!\")\nbot.add_plugin(plugin)\nbot.run()",
+        "detail": "main",
+        "documentation": {}
+    }
+]
